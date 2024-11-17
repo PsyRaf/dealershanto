@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpdgnpj52ql5b"]
+
+[ext_resource type="Script" path="res://scenes/mainmenu.gd" id="1_gnx6n"]
+[ext_resource type="Texture2D" uid="uid://slpyjqaoyx66" path="res://assets/sddefault.jpg" id="3_0yxie"]
+[ext_resource type="AudioStream" uid="uid://bxi3gvbhkvjf1" path="res://assets/Gajar Nouka Pahartoli Jay (mp3cut.net).mp3" id="3_nw3md"]
+[ext_resource type="Texture2D" uid="uid://nsf5r2ehjb0o" path="res://assets/shanto-removebg-preview.png" id="4_jmsj6"]
+
+[node name="mainmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gnx6n")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_nw3md")
+pitch_scale = 1.84
+autoplay = true
+
+[node name="Sddefault" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(3.055, 3.055)
+texture = ExtResource("3_0yxie")
+
+[node name="Shanto-removebg-preview" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0.290196, 1)
+position = Vector2(864, 558)
+scale = Vector2(3.312, 2.528)
+texture = ExtResource("4_jmsj6")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 884.0
+offset_top = 862.0
+offset_right = 930.0
+offset_bottom = 893.0
+scale = Vector2(4, 4)
+text = "Start"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

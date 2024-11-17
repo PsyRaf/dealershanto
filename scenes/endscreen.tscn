@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyrbnqnc1n83j"]
+
+[ext_resource type="Script" path="res://endscreen.gd" id="1_jnh4x"]
+[ext_resource type="Texture2D" uid="uid://dwpno73hy1cj2" path="res://assets/higheffect.png" id="2_m15lf"]
+
+[node name="endscreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = 9.0
+offset_right = 11.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jnh4x")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 438.0
+offset_right = 931.0
+offset_bottom = 469.0
+scale = Vector2(4, 4)
+text = "Your Score: "
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 876.0
+offset_top = 759.0
+offset_right = 1076.0
+offset_bottom = 857.0
+text = "Main Menu"
+
+[node name="Higheffect" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_m15lf")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

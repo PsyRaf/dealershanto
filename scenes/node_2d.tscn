@@ -1,0 +1,181 @@
+[gd_scene load_steps=12 format=3 uid="uid://bw0hhu3w0ysrh"]
+
+[ext_resource type="Texture2D" uid="uid://c6ufagpi74gvv" path="res://assets/map.png" id="1_2c7wi"]
+[ext_resource type="Script" path="res://scenes/node_2d.gd" id="1_vwrei"]
+[ext_resource type="PackedScene" uid="uid://yx1kgwfwyxre" path="res://scenes/character_body_2d.tscn" id="3_l17wb"]
+[ext_resource type="Texture2D" uid="uid://dwpno73hy1cj2" path="res://assets/higheffect.png" id="4_twy2k"]
+[ext_resource type="AudioStream" uid="uid://b2eudmaatwrbv" path="res://assets/Pink Floyd - High Hopes - Slide Solo Cover Oni Hasan (mp3cut.net).mp3" id="5_fevk8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_27ht8"]
+albedo_color = Color(0.268398, 0.268398, 0.268398, 1)
+emission_enabled = true
+emission = Color(0.214103, 0.214103, 0.214103, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g3nqk"]
+material = SubResource("StandardMaterial3D_27ht8")
+size = Vector3(500, 500, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_55jue"]
+size = Vector3(500, 500, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ctu8s"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jvmrc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jo4cy"]
+size = Vector2(356, 353)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_vwrei")
+
+[node name="roadsandmap" type="Node2D" parent="."]
+
+[node name="Map" type="Sprite2D" parent="roadsandmap"]
+position = Vector2(960, 540)
+texture = ExtResource("1_2c7wi")
+
+[node name="texts" type="Node2D" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="texts"]
+offset_left = 1072.0
+offset_top = 462.0
+offset_right = 1177.0
+offset_bottom = 513.0
+scale = Vector2(2.425, 2.425)
+text = "Time:
+Points:"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="texts"]
+offset_left = 520.0
+offset_top = 462.0
+offset_right = 607.0
+offset_bottom = 517.0
+scale = Vector2(2.425, 2.425)
+text = "Collect:
+Deliver:"
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_l17wb")]
+position = Vector2(903, 975)
+
+[node name="buildings" type="Node2D" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="buildings"]
+modulate = Color(0.352941, 0.352941, 0.352941, 1)
+position = Vector2(492.5, 218)
+scale = Vector2(0.766, 0.76)
+mesh = SubResource("BoxMesh_g3nqk")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="buildings"]
+modulate = Color(0.352941, 0.352941, 0.352941, 1)
+position = Vector2(1573.5, 271)
+scale = Vector2(1.086, 0.868)
+mesh = SubResource("BoxMesh_55jue")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="buildings"]
+modulate = Color(0.352941, 0.352941, 0.352941, 1)
+position = Vector2(278.875, 786.5)
+scale = Vector2(402.25, 449)
+mesh = SubResource("BoxMesh_ctu8s")
+
+[node name="MeshInstance2D4" type="MeshInstance2D" parent="buildings"]
+modulate = Color(0.353438, 0.353438, 0.353438, 1)
+position = Vector2(1393.38, 823.125)
+scale = Vector2(365.25, 421.75)
+mesh = SubResource("BoxMesh_jvmrc")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(492, 215.5)
+shape = SubResource("RectangleShape2D_jo4cy")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(98, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(1487, 270)
+scale = Vector2(1.56, 1.26)
+shape = SubResource("RectangleShape2D_jo4cy")
+
+[node name="Area2D3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(282, 789)
+scale = Vector2(1.205, 1.35)
+shape = SubResource("RectangleShape2D_jo4cy")
+
+[node name="Area2D4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2(1392, 822)
+scale = Vector2(0.99, 1.16)
+shape = SubResource("RectangleShape2D_jo4cy")
+
+[node name="moretexts" type="Node2D" parent="."]
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="moretexts"]
+offset_left = 464.0
+offset_top = 162.0
+offset_right = 504.0
+offset_bottom = 202.0
+scale = Vector2(4.455, 4.455)
+text = "1"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="moretexts"]
+offset_left = 1565.0
+offset_top = 215.0
+offset_right = 1602.0
+offset_bottom = 243.0
+scale = Vector2(4.455, 4.455)
+text = "2"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="moretexts"]
+offset_left = 267.0
+offset_top = 736.0
+offset_right = 292.0
+offset_bottom = 770.0
+scale = Vector2(4.455, 4.455)
+text = "3
+"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="moretexts"]
+offset_left = 1377.0
+offset_top = 764.0
+offset_right = 1398.0
+offset_bottom = 792.0
+scale = Vector2(4.455, 4.455)
+text = "4"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1679.0
+offset_top = 849.0
+offset_right = 1850.0
+offset_bottom = 1016.0
+
+[node name="Higheffect" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 540)
+texture = ExtResource("4_twy2k")
+
+[node name="Area2D5" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Area2D5"]
+position = Vector2(671.16, 63.0001)
+scale = Vector2(1.26578, 1)
+polygon = PackedVector2Array(320, 409, 721, 408, 721, 549, 317, 555)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D5"]
+polygon = PackedVector2Array(320, 409, 721, 408, 723, 559, 317, 555)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_fevk8")
+pitch_scale = 1.9
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="." method="_on_area_2d_3_body_entered"]
+[connection signal="body_entered" from="Area2D4" to="." method="_on_area_2d_4_body_entered"]
+[connection signal="body_entered" from="Area2D4" to="CharacterBody2D" method="_on_area_2d_4_body_entered"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="body_entered" from="Area2D5" to="." method="_on_area_2d_5_body_entered"]
+[connection signal="body_exited" from="Area2D5" to="." method="_on_area_2d_5_body_exited"]

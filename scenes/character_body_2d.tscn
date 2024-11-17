@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://yx1kgwfwyxre"]
+
+[ext_resource type="Script" path="res://scenes/character_body_2d.gd" id="1_8c1ie"]
+[ext_resource type="Texture2D" uid="uid://dvuyt6p4xe08i" path="res://assets/jahid.png" id="1_m0ps1"]
+[ext_resource type="Texture2D" uid="uid://btt1v1r13twuq" path="res://assets/shanto.png" id="2_fd2bp"]
+[ext_resource type="Texture2D" uid="uid://t5b0h7xvoshy" path="res://assets/weed.png" id="4_ioe3j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7tjt"]
+size = Vector2(80.5, 220)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_8c1ie")
+
+[node name="Jahid" type="Sprite2D" parent="."]
+position = Vector2(-9.53674e-07, -18)
+scale = Vector2(1, 1.34375)
+texture = ExtResource("1_m0ps1")
+
+[node name="Shanto" type="Sprite2D" parent="."]
+position = Vector2(9, -37)
+texture = ExtResource("2_fd2bp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.75, -26)
+shape = SubResource("RectangleShape2D_t7tjt")
+
+[node name="Weed" type="Sprite2D" parent="."]
+position = Vector2(81, -39)
+rotation = 0.977384
+scale = Vector2(0.125833, 0.130833)
+texture = ExtResource("4_ioe3j")

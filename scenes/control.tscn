@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7cwbrc3d452c"]
+
+[ext_resource type="Script" path="res://choosescreen.gd" id="1_j4y74"]
+[ext_resource type="Texture2D" uid="uid://cshqi30nvwhn8" path="res://assets/choosechar.png" id="2_mgv0c"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j4y74")
+
+[node name="Choosechar" type="Sprite2D" parent="."]
+position = Vector2(946, 389)
+scale = Vector2(2.42533, 2.09159)
+texture = ExtResource("2_mgv0c")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 502.0
+offset_right = 197.0
+offset_bottom = 553.0
+scale = Vector2(3.215, 3.215)
+text = "Shanto"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1444.0
+offset_top = 500.0
+offset_right = 1560.0
+offset_bottom = 551.0
+scale = Vector2(3.25, 3.25)
+text = "Jahid"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 474.0
+offset_top = 115.0
+offset_right = 660.0
+offset_bottom = 143.0
+scale = Vector2(5.06, 5.06)
+text = "Choose your character"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
